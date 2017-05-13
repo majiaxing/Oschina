@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/ItemTwo_Imagejin"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/widget_today_icon"
+            />
+
+        <ImageView
+            android:id="@+id/ItemTwo_Imageyuan"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_label_originate"
+            />
+<ImageView
+            android:id="@+id/ItemTwo_jian"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_label_recommend"
+            />
+
+
+        <TextView
+            android:id="@+id/ItemTwo_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:maxLines="1"
+            />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ItemTwo_Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bady"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.00" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/at"
+            />
+        <TextView
+            android:id="@+id/ItemTwo_authorname"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="authorname"
+            />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_comment"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
