@@ -1,12 +1,12 @@
 package com.example.lenovo.oschina.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.lenovo.oschina.App;
+import com.example.lenovo.oschina.coefig.FragmantBuilder;
 
 import butterknife.ButterKnife;
 
@@ -18,6 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     private FragmentManager fragmentManager;
+    private boolean mFlag=true;
 
 
     @Override
@@ -31,11 +32,17 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onResume() {
         super.onResume();
         App.activity = this;
-        loadData();
+        if(mFlag) {
+            loadData();
+        mFlag=false;
+        }
+
     }
 
     /**
@@ -69,7 +76,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        android.os.Process.killProcess(Process.myPid());
-        System.exit(0);
     }
+
+
+
+
 }

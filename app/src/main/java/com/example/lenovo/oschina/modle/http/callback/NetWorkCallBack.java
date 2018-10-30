@@ -18,4 +18,5 @@ public interface NetWorkCallBack {
      * @param errorMsg
      */
     void onError(String errorMsg);
+
 }

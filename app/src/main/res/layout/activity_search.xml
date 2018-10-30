@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+  <LinearLayout
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <!--<ImageView-->
+          <!--android:layout_marginTop="6dp"-->
+          <!--android:layout_width="wrap_content"-->
+          <!--android:layout_height="wrap_content"-->
+          <!--android:id="@+id/Search_Btn"-->
+          <!--android:src="@drawable/search_icon"-->
+          <!--/>-->
+      <EditText
+          android:drawableLeft="@drawable/search_icon"
+          android:gravity="center_horizontal"
+          android:layout_width="320dp"
+          android:layout_height="wrap_content"
+          android:id="@+id/Search_Name"
+          android:hint="搜索/博客/软件"
+          />
+      <!--<ImageView-->
+          <!--android:layout_marginTop="10dp"-->
+          <!--android:layout_width="20dp"-->
+          <!--android:layout_height="20dp"-->
+          <!--android:id="@+id/Image_Clear"-->
+          <!--android:src="@drawable/al_clear"-->
+          <!--/>-->
+      <TextView
+
+          android:layout_marginLeft="10dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/Search_Clear"
+          android:text="取消"/>
+
+  </LinearLayout>
+    <FrameLayout
+        android:id="@+id/Search_FrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        ></FrameLayout>
+</LinearLayout>

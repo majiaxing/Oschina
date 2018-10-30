@@ -14,10 +14,10 @@ import com.jude.rollviewpager.adapter.StaticPagerAdapter;
 public class TestNormalAdapter extends StaticPagerAdapter {
 
     private int[] imgs = {
-            R.drawable.cc,
-            R.drawable.dd,
-            R.drawable.aa,
-            R.drawable.bb,
+            R.drawable.bg_topic_1,
+            R.drawable.bg_topic_2,
+            R.drawable.bg_topic_3,
+            R.drawable.bg_topic_4,
     };
 
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.lenovo.oschina.R;
 import com.example.lenovo.oschina.modle.enitity.ItemWenda;
+import com.example.lenovo.oschina.view.GlideYuanxing;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class WendaListViewAdapter extends BaseAdapter {
         holder.Title.setText(item.getTitle()+"");
         holder.Body.setText(item.getBody()+"");
         holder.authorname.setText(item.getAuthor()+"");
-        Glide.with(mContext).load(item.getPortrait()).into(holder.image);
+        Glide.with(mContext).load(item.getPortrait()).transform(new GlideYuanxing(mContext)).into(holder.image);
         return convertView;
 
 

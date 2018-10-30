@@ -49,6 +49,7 @@ public class ItemWenda {
         private String pubDate;
         private AnswerBean answer;
 
+
         public String getId() {
             return id;
         }

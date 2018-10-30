@@ -1,27 +1,22 @@
 package com.example.lenovo.oschina.fragmant;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.lenovo.oschina.App;
 import com.example.lenovo.oschina.R;
-import com.example.lenovo.oschina.adapter.WendaListViewAdapter;
-import com.example.lenovo.oschina.base.BaseFragment;
-import com.example.lenovo.oschina.coefig.ThreadUtils;
+import com.example.lenovo.oschina.activity.ZixunXiangqing;
 import com.example.lenovo.oschina.adapter.ListViewAdapter;
 import com.example.lenovo.oschina.adapter.TestNormalAdapter;
+import com.example.lenovo.oschina.base.BaseFragment;
+import com.example.lenovo.oschina.coefig.ThreadUtils;
 import com.example.lenovo.oschina.modle.enitity.Item;
-import com.example.lenovo.oschina.modle.enitity.ItemBoke;
-import com.example.lenovo.oschina.modle.enitity.ItemWenda;
 import com.example.lenovo.oschina.modle.http.biz.INewsModel;
 import com.example.lenovo.oschina.modle.http.biz.NewsModelImp;
 import com.example.lenovo.oschina.modle.http.callback.NetWorkCallBack;
@@ -41,27 +36,14 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
  * Created by Lenovo on 2017/5/9.
  */
 
-public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
+public class ZixunFragmant extends BaseFragment implements NetWorkCallBack,AdapterView.OnItemClickListener {
     private RollPagerView mRollViewPager;
     private ListView mlistView;
     private List<Item.NewsBean> mList = new ArrayList<>();
     private ListViewAdapter listViewAdapter;
     private PtrFrameLayout ptrFrameLayout;
     private int pageIndex = 0;
-    private View view1,view;
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         view = inflater.inflate(R.layout.zixunviewpager_activity, null);
-        view1 = inflater.inflate(R.layout.lunbotu_activity, null);
-        layoutId();
-        initView(view);
-        initData();
-        loadData();
-        getvolley();
-        return view;
-    }
+    private View view1;
 
     @Override
     protected int layoutId() {
@@ -71,16 +53,18 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
 
     @Override
     protected void initView(View view) {
-        mRollViewPager = (RollPagerView) view1.findViewById(R.id.Zixun_Lunbo);
-        mlistView = (ListView) view.findViewById(R.id.Zixun_ListView);
-        ptrFrameLayout = (PtrFrameLayout) view.findViewById(R.id.zixun_ptr);
+            view1 = LayoutInflater.from(getActivity()).inflate(R.layout.lunbotu_activity, null);
 
+            mRollViewPager = (RollPagerView) view1.findViewById(R.id.Zixun_Lunbo);
+            mlistView = (ListView) view.findViewById(R.id.Zixun_ListView);
+            ptrFrameLayout = (PtrFrameLayout) view.findViewById(R.id.zixun_ptr);
+            listViewAdapter = new ListViewAdapter(mList,getContext());
+        getvolley();
     }
 
     @Override
     protected void initData() {
 
-        listViewAdapter = new ListViewAdapter(mList,getContext());
 
         mlistView.addHeaderView(view1);
         //设置播放时间间隔
@@ -101,7 +85,7 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
 
     @Override
     protected void initListener() {
-
+    mlistView.setOnItemClickListener(this);
     }
 
     @Override
@@ -144,8 +128,9 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
                         ThreadUtils.runOnUIThread(new Runnable() {
                             @Override
                             public void run() {
-                                pageIndex++;
+
                                 ptrFrameLayout.refreshComplete();
+                                pageIndex++;
                                 getvolley();
                             }
                         });
@@ -153,6 +138,7 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
                 }.start();
             }
         });
+
     }
 
     @Override
@@ -165,6 +151,7 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
 
     private void getvolley() {
         INewsModel iNewsModel = new NewsModelImp();
+
         iNewsModel.newsList(pageIndex,this);
     }
 
@@ -175,8 +162,8 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
 
 
         XStream xStream = new XStream();
-        xStream.alias("oschina",ItemBoke.class);
-        xStream.alias("news",ItemBoke.BlogBean.class);
+        xStream.alias("oschina",Item.class);
+        xStream.alias("news",Item.NewsBean.class);
         Item hotspot = (Item) xStream.fromXML(xmlData);
         Log.e("AAA","数据解析成功"+hotspot.toString());
         mList.addAll(hotspot.getNewslist());
@@ -190,5 +177,14 @@ public class ZixunFragmant extends BaseFragment implements NetWorkCallBack {
     @Override
     public void onError(String errorMsg) {
         Log.e("AAA", "请求失败" + errorMsg.toString());
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        String str = mList.get(position).getId();
+        Intent intent = new Intent(getContext(), ZixunXiangqing.class);
+        intent.putExtra("id",str);
+        startActivity(intent);
     }
 }

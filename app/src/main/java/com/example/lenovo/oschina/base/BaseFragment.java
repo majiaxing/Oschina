@@ -24,7 +24,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(layoutId(),container,false);
+        return inflater.inflate(layoutId(), container, false);
     }
 
 
@@ -52,6 +52,7 @@ public abstract class BaseFragment extends Fragment {
         super.onHiddenChanged(hidden);
         if (hidden){
             onhidden();
+
         }else{
             onShow();
         }

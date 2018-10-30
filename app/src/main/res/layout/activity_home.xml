@@ -2,31 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/home_linear"
     android:weightSum="1">
-
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#24CF5F"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="综合"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:layout_gravity="center_horizontal"
-            />
-
-        <Button
-            android:id="@+id/home_sousuo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right"
-            android:background="@mipmap/search_icon"
-            />
-    </android.support.v7.widget.Toolbar>
-
 
 
     <FrameLayout
@@ -37,23 +14,35 @@
 
         </FrameLayout>
 
-
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0.1dp"
+        android:background="#949090"
+        />
+    
+    <RadioGroup
+        android:id="@+id/Main_RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:weightSum="5"
+        android:orientation="horizontal"
         >
-      <RadioButton
-          android:id="@+id/home_zonghe"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:button="@null"
-          android:drawableTop="@drawable/zonghe"
-          android:text="综合"
-          android:textColor="@drawable/textstyle"
-          android:textSize="20dp"
-          android:layout_weight="1"
-          android:gravity="center_horizontal"
-          />
+
+        <RadioButton
+            android:id="@+id/home_zonghe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableTop="@drawable/zonghe"
+            android:text="综合"
+            android:textColor="@drawable/textstyle"
+            android:textSize="15dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center_horizontal"
+
+            />
+
         <RadioButton
           android:id="@+id/home_Dongtan"
           android:layout_width="0dp"
@@ -61,8 +50,8 @@
           android:button="@null"
           android:drawableTop="@drawable/dongtan"
           android:text="动弹"
-          android:textColor="@drawable/textstyletwo"
-          android:textSize="20dp"
+          android:textColor="@drawable/textstyle"
+          android:textSize="15dp"
           android:layout_weight="1"
           android:gravity="center_horizontal"
           />
@@ -83,8 +72,8 @@
             android:gravity="center_horizontal"
             android:drawableTop="@drawable/faxian"
             android:text="发现"
-            android:textColor="@drawable/textstyletwo"
-            android:textSize="20dp"
+            android:textColor="@drawable/textstyle"
+            android:textSize="15dp"
             android:layout_weight="1"
             android:button="@null"
             />
@@ -97,13 +86,10 @@
             android:button="@null"
              android:drawableTop="@drawable/myself"
              android:text="我的"
-             android:textColor="@drawable/textstyletwo"
-             android:textSize="20dp"
+             android:textColor="@drawable/textstyle"
+             android:textSize="15dp"
             />
 
-
-
-
-    </LinearLayout>
+    </RadioGroup>
 
 </LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:id="@+id/Top_Group"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#42f185">
+        <ImageView
+            android:id="@+id/Back"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_diary_back"
+            />
+
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="线下活动"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+
+            android:id="@+id/Title_Text"
+            />
+
+
+
+    </LinearLayout>
+    <com.androidkun.PullToRefreshRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/PullToRecycleView"
+        ></com.androidkun.PullToRefreshRecyclerView>
+
+</LinearLayout>
+

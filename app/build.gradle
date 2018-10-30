@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.lenovo.oschina"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'in.srain.cube:ptr-load-more:1.0.6'
-    compile 'com.android.support:design:25.0.0'
+    compile 'com.android.support:design:25.1.0'
     compile 'com.jude:rollviewpager:1.2.9'
     compile files('libs/volley.jar')
     compile('com.thoughtworks.xstream:xstream:1.4.7') {
@@ -36,5 +36,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.androidkun:pulltorefreshrecyclerview:1.0.6'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
 
 }

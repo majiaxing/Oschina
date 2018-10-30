@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/dongtan_lin"
+    android:layout_height="wrap_content"
+
+    >
+
+    <ImageView
+        android:id="@+id/DongTan_head"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        />
+
+    <TextView
+        android:id="@+id/DongTan_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/DongTan_head"
+        android:text="亚麻籽"
+        android:textColor="#000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/DongTan_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DongTan_name"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/DongTan_head"
+        android:text="突然想起了毕业照的拍立得"
+        android:textColor="#000" />
+    <ImageView
+        android:id="@+id/DongTan_ImageView"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/DongTan_body"
+        android:layout_toRightOf="@id/DongTan_head"
+        android:layout_width="100dp"
+        android:layout_height="100dp"></ImageView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DongTan_ImageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+        <TextView
+            android:layout_marginLeft="60dp"
+            android:id="@+id/DongTan_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="18dp"
+            android:text="2分钟前"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/DongTan_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@id/DongTan_date"
+            android:text="Android"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/DongTan_zhuanfa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="18dp"
+            android:drawableLeft="@drawable/zff"
+            android:text="转发"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/DongTan_pinlun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_toLeftOf="@id/DongTan_zhuanfa"
+            android:drawableLeft="@drawable/ic_comment_30"
+            android:text="评论"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/DongTan_zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_toLeftOf="@id/DongTan_pinlun"
+            android:text="12"
+
+            android:textColor="#000" />
+        <ImageView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:id="@+id/DongTan_zanImage"
+            android:layout_marginTop="18dp"
+            android:layout_toLeftOf="@id/DongTan_zan"
+            android:src="@drawable/ic_thumb_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

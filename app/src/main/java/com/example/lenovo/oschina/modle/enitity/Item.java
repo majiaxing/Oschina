@@ -14,6 +14,7 @@ public class Item {
     private String newsCount;
     private List<NewsBean> newslist;
 
+
     public String getCatalog() {
         return catalog;
     }

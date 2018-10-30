@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/ZiXunLayout_Item"
+    android:layout_height="130dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_marginTop="3dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_label_today"
+            />
+
+        <TextView
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/icon"
+            android:textColor="#353434"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentTitle"
+            android:text="Java开源博客"
+             android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+    <TextView
+
+        android:textSize="12dp"
+        android:text="我们得到显示的社没回家"
+        android:textColor="#353434"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contentBody"
+        />
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/sd"
+            android:paddingLeft="10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/compose_toolbar_mention_normal"
+            />
+        <TextView
+            android:layout_toRightOf="@+id/sd"
+            android:textColor="#353434"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contentzuozhe"
+            android:text="dfdf"
+            />
+        <TextView
+            android:textColor="#353434"
+            android:layout_toRightOf="@+id/contentzuozhe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sdsd"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/contentShijian"
+            />
+      <ImageView
+          android:layout_marginTop="3dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/ic_comment_30"
+         android:layout_toLeftOf="@+id/contentpinglun"
+          />
+        <TextView
+            android:textColor="#100101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sd"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/contentpinglun"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+</LinearLayout>

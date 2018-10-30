@@ -5,14 +5,59 @@
     android:weightSum="1">
 
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#24CF5F"
+        >
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="综合"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/home_sousuo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="right"
+            android:background="@drawable/btn_search_normal"
+            />
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+
 
 
     <android.support.design.widget.TabLayout
         android:id="@+id/Main_tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"/>
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="8"
+        />
 
-        <android.support.v4.view.ViewPager
+        <ImageView
+            android:id="@+id/Main_Image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_subscribe"
+            android:layout_weight="0.63"
+            />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
             android:id="@+id/Main_ViewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

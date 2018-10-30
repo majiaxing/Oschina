@@ -1,5 +1,6 @@
 package com.example.lenovo.oschina.modle.http;
 
+import com.example.lenovo.oschina.util.OkhttpUtils;
 import com.example.lenovo.oschina.util.VolleyUtil;
 
 /**
@@ -16,11 +17,14 @@ public class HttpFactory {
 
     public static IHttp create(){
         IHttp iHttp = null;
-
+        OkHttp okHttp = null;
         switch (TYPE){
             case VOLLEY:
                 iHttp = VolleyUtil.getInstance();
+
                 break;
+            case OKHTTP:
+                okHttp = OkhttpUtils.getInstance();
         }
         return iHttp;
     }
